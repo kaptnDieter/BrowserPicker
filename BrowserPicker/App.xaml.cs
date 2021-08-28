@@ -38,6 +38,11 @@ namespace BrowserPicker
             logWriter.WriteLog("Program Started");
 
 
+            SettingsView settingsWindow = new SettingsView();
+            settingsWindow.Show();
+
+
+
             Services.Setup.RegisterAsBrowser();
 
             //only set default settings if no settings in registry
@@ -77,7 +82,6 @@ namespace BrowserPicker
                 if (Services.UrlProcessor.handleURL(url))
                 {
                     logWriter.WriteLog("url handled successfull");
-                    System.Windows.Application.Current.Shutdown();
                     return;
                 }
                 else
@@ -90,7 +94,6 @@ namespace BrowserPicker
                      *
                      *
                      */
-                    System.Windows.Application.Current.Shutdown();
                 }
             }
             else
@@ -103,7 +106,6 @@ namespace BrowserPicker
                 *
                 *
                 */
-                System.Windows.Application.Current.Shutdown();
             }
 
 

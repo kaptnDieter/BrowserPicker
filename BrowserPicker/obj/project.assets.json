@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Jonathan\\source\\repos\\BrowserPicker\\BrowserPicker\\BrowserPicker.csproj",
+      "projectUniqueName": "C:\\Users\\Jonathan\\source\\repos\\GitHub\\BrowserPicker\\BrowserPicker\\BrowserPicker.csproj",
       "projectName": "BrowserPicker",
-      "projectPath": "C:\\Users\\Jonathan\\source\\repos\\BrowserPicker\\BrowserPicker\\BrowserPicker.csproj",
+      "projectPath": "C:\\Users\\Jonathan\\source\\repos\\GitHub\\BrowserPicker\\BrowserPicker\\BrowserPicker.csproj",
       "packagesPath": "C:\\Users\\Jonathan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Jonathan\\source\\repos\\BrowserPicker\\BrowserPicker\\obj\\",
+      "outputPath": "C:\\Users\\Jonathan\\source\\repos\\GitHub\\BrowserPicker\\BrowserPicker\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Jonathan\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -1,0 +1,20 @@
+﻿<Window x:Class="BrowserPicker.SettingsView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BrowserPicker"
+        mc:Ignorable="d"
+        Title="SettingsView" Height="450" Width="800">
+    <Grid>
+        <ListView Margin="10,10,305,10" x:Name="listOfRules_ListView" ItemsSource="{Binding listOfRules}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding url}" Header="Url" Width="auto"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding browser}" Header="Browser" Width="auto"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+    </Grid>
+</Window>
