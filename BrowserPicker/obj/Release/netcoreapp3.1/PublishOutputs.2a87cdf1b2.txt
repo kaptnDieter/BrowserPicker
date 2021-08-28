@@ -1,0 +1,5 @@
+C:\Users\Jonathan\Desktop\installer\BrowserPicker.exe
+C:\Users\Jonathan\Desktop\installer\BrowserPicker.dll
+C:\Users\Jonathan\Desktop\installer\BrowserPicker.deps.json
+C:\Users\Jonathan\Desktop\installer\BrowserPicker.runtimeconfig.json
+C:\Users\Jonathan\Desktop\installer\BrowserPicker.pdb
