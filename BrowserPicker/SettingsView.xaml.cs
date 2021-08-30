@@ -18,8 +18,8 @@ namespace BrowserPicker
     /// </summary>
     public partial class SettingsView : Window
     {
-        private List<Rule> listOfRules;
-        private List<Browser> listOfBrowsers;
+        List<Rule> listOfRules;
+        List<Browser> listOfBrowsers;
 
         public SettingsView()
         {

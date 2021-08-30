@@ -5,9 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BrowserPicker"
         mc:Ignorable="d"
-        Title="SettingsView" Height="450" Width="800">
+        Title="SettingsView" Height="450" Width="800"
+        >
+    <Window.Resources>
+        <local:SettingsView x:Key="mySource"></local:SettingsView>
+    </Window.Resources>
+    <Window.DataContext>
+        <Binding Source="{StaticResource mySource}"/>
+    </Window.DataContext>
     <Grid>
-        <ListView Margin="10,10,305,10" x:Name="listOfRules_ListView" ItemsSource="{Binding listOfRules}">
+        <ListView Margin="10,10,305,10" x:Name="listOfRules_ListView" ItemsSource="{Binding Path = listOfRules_ListView}">
             <ListView.View>
                 <GridView>
                     <GridViewColumn DisplayMemberBinding="{Binding url}" Header="Url" Width="auto"/>

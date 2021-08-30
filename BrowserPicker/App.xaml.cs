@@ -41,6 +41,8 @@ namespace BrowserPicker
             SettingsView settingsWindow = new SettingsView();
             settingsWindow.Show();
 
+      
+
 
 
             Services.Setup.RegisterAsBrowser();

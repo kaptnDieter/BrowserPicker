@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "PcxY4FYABmpkRlM0A28+cWLZiQEX2kiwas4LoXAQrbX4LRMdEoP1e6oajl6U5jpIJTGYIM6Gh1ZxK94zftDWaA==",
+  "dgSpecHash": "T9ITch8JXeHz3GKbzdu/RXDRheiF/pvnGVl01BntCOh8NWYNMvChPxH8yAQ62Lr4pbbbHm/CDPYFfVFfW7JCHA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Jonathan\\source\\repos\\BrowserPicker\\BrowserPicker\\BrowserPicker.csproj",
+  "projectFilePath": "C:\\Users\\Jonathan\\source\\repos\\BrowserPicker_WPF\\BrowserPicker\\BrowserPicker.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
