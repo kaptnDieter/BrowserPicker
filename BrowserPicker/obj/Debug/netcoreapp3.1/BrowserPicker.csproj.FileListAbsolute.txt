@@ -47,12 +47,10 @@ C:\Users\Jonathan\source\repos\BrowserPicker_WPF\BrowserPicker\bin\Debug\netcore
 C:\Users\Jonathan\source\repos\BrowserPicker_WPF\BrowserPicker\bin\Debug\netcoreapp3.1\BrowserPicker.dll
 C:\Users\Jonathan\source\repos\BrowserPicker_WPF\BrowserPicker\bin\Debug\netcoreapp3.1\BrowserPicker.pdb
 C:\Users\Jonathan\source\repos\BrowserPicker_WPF\BrowserPicker\obj\Debug\netcoreapp3.1\BrowserPicker.csproj.AssemblyReference.cache
-C:\Users\Jonathan\source\repos\BrowserPicker_WPF\BrowserPicker\obj\Debug\netcoreapp3.1\MainWindow.g.cs
 C:\Users\Jonathan\source\repos\BrowserPicker_WPF\BrowserPicker\obj\Debug\netcoreapp3.1\SettingsView.g.cs
 C:\Users\Jonathan\source\repos\BrowserPicker_WPF\BrowserPicker\obj\Debug\netcoreapp3.1\App.g.cs
 C:\Users\Jonathan\source\repos\BrowserPicker_WPF\BrowserPicker\obj\Debug\netcoreapp3.1\BrowserPicker_MarkupCompile.cache
 C:\Users\Jonathan\source\repos\BrowserPicker_WPF\BrowserPicker\obj\Debug\netcoreapp3.1\BrowserPicker_MarkupCompile.lref
-C:\Users\Jonathan\source\repos\BrowserPicker_WPF\BrowserPicker\obj\Debug\netcoreapp3.1\MainWindow.baml
 C:\Users\Jonathan\source\repos\BrowserPicker_WPF\BrowserPicker\obj\Debug\netcoreapp3.1\SettingsView.baml
 C:\Users\Jonathan\source\repos\BrowserPicker_WPF\BrowserPicker\obj\Debug\netcoreapp3.1\BrowserPicker.g.resources
 C:\Users\Jonathan\source\repos\BrowserPicker_WPF\BrowserPicker\obj\Debug\netcoreapp3.1\BrowserPicker.GeneratedMSBuildEditorConfig.editorconfig
@@ -62,4 +60,6 @@ C:\Users\Jonathan\source\repos\BrowserPicker_WPF\BrowserPicker\obj\Debug\netcore
 C:\Users\Jonathan\source\repos\BrowserPicker_WPF\BrowserPicker\obj\Debug\netcoreapp3.1\BrowserPicker.dll
 C:\Users\Jonathan\source\repos\BrowserPicker_WPF\BrowserPicker\obj\Debug\netcoreapp3.1\BrowserPicker.pdb
 C:\Users\Jonathan\source\repos\BrowserPicker_WPF\BrowserPicker\obj\Debug\netcoreapp3.1\BrowserPicker.genruntimeconfig.cache
-C:\Users\Jonathan\source\repos\BrowserPicker_WPF\BrowserPicker\obj\Debug\netcoreapp3.1\GeneratedInternalTypeHelper.g.cs
+C:\Users\Jonathan\source\repos\BrowserPicker_WPF\BrowserPicker\obj\Debug\netcoreapp3.1\SelectView.g.cs
+C:\Users\Jonathan\source\repos\BrowserPicker_WPF\BrowserPicker\obj\Debug\netcoreapp3.1\SelectView.baml
+C:\Users\Jonathan\source\repos\BrowserPicker_WPF\BrowserPicker\obj\Debug\netcoreapp3.1\App.baml

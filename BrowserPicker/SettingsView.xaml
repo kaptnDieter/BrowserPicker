@@ -5,23 +5,37 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BrowserPicker"
         mc:Ignorable="d"
-        Title="SettingsView" Height="450" Width="800"
-        >
-    <Window.Resources>
-        <local:SettingsView x:Key="mySource"></local:SettingsView>
-    </Window.Resources>
-    <Window.DataContext>
-        <Binding Source="{StaticResource mySource}"/>
-    </Window.DataContext>
+        Title="Einstellungen" Height="450" Width="800">
     <Grid>
-        <ListView Margin="10,10,305,10" x:Name="listOfRules_ListView" ItemsSource="{Binding Path = listOfRules_ListView}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        
+        <Label Grid.Column="0" Grid.Row="0" Content="Registrierte Regeln" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <ListView Grid.Column="0" Grid.Row="1" Name="ListView_listOfRules">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn DisplayMemberBinding="{Binding url}" Header="Url" Width="auto"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding browser}" Header="Browser" Width="auto"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Browser}" Header="Browser" Width="auto"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Url}" Header="Url" Width="auto"/>
                 </GridView>
             </ListView.View>
         </ListView>
 
+        <Label Grid.Column="1" Grid.Row="0" Content="Registrierte Browser" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.615,-0.413"/>
+        <ListView Grid.Column="1" Grid.Row="1" Name="ListView_listOfBrowsers">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding Name}" Header="Name" Width="auto"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Exec}" Header="Exec" Width="auto"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        
     </Grid>
 </Window>

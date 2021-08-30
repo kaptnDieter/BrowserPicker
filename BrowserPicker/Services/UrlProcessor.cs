@@ -23,7 +23,7 @@ namespace BrowserPicker.Services
             App.logWriter.WriteLog("List of rules:");
             foreach (var rule in listOfRules)
             {
-                App.logWriter.WriteLog("browser: " + rule.browser + ", " + "url: " + rule.url);
+                App.logWriter.WriteLog("browser: " + rule.Browser + ", " + "url: " + rule.Url);
             }
 
 
@@ -35,19 +35,17 @@ namespace BrowserPicker.Services
             App.logWriter.WriteLog("List of Browsers:");
             foreach (var browser in listOfBrowsers)
             {
-                App.logWriter.WriteLog("name: " + browser.name + ", " + "exec: " + browser.exec);
+                App.logWriter.WriteLog("name: " + browser.Name + ", " + "exec: " + browser.Exec);
             }
 
             //check if submitted url matches any rule in listOfRules
             foreach (var rule in listOfRules)
             {
-                if (UrlMatch(url, rule.url))
+                if (UrlMatch(url, rule.Url))
                 {
-                    App.logWriter.WriteLog("Found a matching rule: " + rule.url + ", browser: " + rule.browser);
-                    //openURL in browser
-                    //string browserExec = listOfBrowsers.First(item => item.name == rule.browser).exec;
+                    App.logWriter.WriteLog("Found a matching rule: " + rule.Url + ", browser: " + rule.Browser);
 
-                    string browserExec = findBrowserInList(rule.browser, listOfBrowsers);
+                    string browserExec = findBrowserInList(rule.Browser, listOfBrowsers);
                     if (browserExec != null)
                     {
                         openURL(browserExec, url);
@@ -56,7 +54,7 @@ namespace BrowserPicker.Services
                     }
                     else
                     {
-                        App.logWriter.WriteLog("There is a rule für this url, but the browser does not exist on your system. Browser from rule: " + rule.browser);
+                        App.logWriter.WriteLog("There is a rule für this url, but the browser does not exist on your system. Browser from rule: " + rule.Browser);
                         MessageBox.Show("There is a rule für this url, but the browser does not exist on your system", "Errore", MessageBoxButton.OK, MessageBoxImage.Error);
                         return false;
                     }
@@ -73,14 +71,15 @@ namespace BrowserPicker.Services
                     string browserExec = findBrowserInList(defaultBrowser, listOfBrowsers);
                     if (browserExec != null)
                     {
+                        App.logWriter.WriteLog("Found no matching rule, but a default browser is defined in settings, open browser: " + defaultBrowser);
                         openURL(browserExec, url);
                         //exit function
                         return true;
                     }
                     else
                     {
-                        App.logWriter.WriteLog("No rule for URL defined, the defined default browser is '" + defaultBrowser + "' but this browser does not exist on the system");
-                        MessageBox.Show("No rule for URL defined, the defined default browser is '" + defaultBrowser + "' but this browser does not exist on the system", "Errore", MessageBoxButton.OK, MessageBoxImage.Error);
+                        App.logWriter.WriteLog("No rule for URL defined. The defined default browser is '" + defaultBrowser + "' but this browser does not exist on the system");
+                        MessageBox.Show("No rule for URL defined." + Environment.NewLine + "The defined default browser is '" + defaultBrowser + "' but this browser does not exist on the system", "Errore", MessageBoxButton.OK, MessageBoxImage.Error);
                         return false;
                     }
                 }
@@ -113,7 +112,7 @@ namespace BrowserPicker.Services
         {
             try
             {
-                string browserExec = list.First(item => item.name == browser).exec;
+                string browserExec = list.First(item => item.Name == browser).Exec;
                 return browserExec;
             }
             catch

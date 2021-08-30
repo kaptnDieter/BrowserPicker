@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
 C:\Users\Jonathan\source\repos\BrowserPicker_WPF\BrowserPicker\App.xaml
-2-958866383
+22011941760
 
-13-1985621883
+13-158584908
 192-1533232326
-MainWindow.xaml;SettingsView.xaml;
+SelectView.xaml;SettingsView.xaml;
 
 False
 

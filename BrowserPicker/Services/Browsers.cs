@@ -31,6 +31,9 @@ namespace BrowserPicker.Services
                     listOfBrowsers.Add(new Browser(name, exec, ""));
                 }
             }
+
+            listOfBrowsers.Sort((x, y) => string.Compare(x.Name, y.Name));
+
             return listOfBrowsers;
         }
 

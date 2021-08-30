@@ -17,10 +17,9 @@ namespace BrowserPicker.Services
         {
             using (RegistryKey key = Registry.CurrentUser.CreateSubKey(@"Software\BrowserPicker\Settings"))
             {
-                key.SetValue("version", "1.0");
                 key.SetValue("writeLog", "true");
                 key.SetValue("alwaysAsk", "false");
-                key.SetValue("defaultBrowser", "Microsoft Edge");
+                key.SetValue("defaultBrowser", "");
             }
         }
 
@@ -42,7 +41,9 @@ namespace BrowserPicker.Services
 
 
 
-
+        //https://docs.microsoft.com/de-de/windows/win32/shell/start-menu-reg?redirectedfrom=MSDN
+        //https://stackoverflow.com/questions/32354861/how-to-find-the-default-browser-via-the-registry-on-windows-10
+        //https://www.codeproject.com/Articles/4808/All-you-wanted-to-know-about-the-Registry-with-C-P
         public static void RegisterAsBrowser()
         //-------------------------------------------------------------------------------------------------------------
         {

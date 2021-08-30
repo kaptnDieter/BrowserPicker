@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace BrowserPicker.Models
 {
-    class Rule
+    public class Rule
     {
-        public string url;
-        public string browser;
+        public string Url { get; set; }
+        public string Browser { get; set; }
 
         public Rule(string submittedUrl, string submittedBrowser)
         {
-            url = submittedUrl;
-            browser = submittedBrowser;
+            Url = submittedUrl;
+            Browser = submittedBrowser;
         }
 
 

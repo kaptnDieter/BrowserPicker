@@ -9,6 +9,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
+
 namespace BrowserPicker
 {
 
@@ -38,13 +39,6 @@ namespace BrowserPicker
             logWriter.WriteLog("Program Started");
 
 
-            SettingsView settingsWindow = new SettingsView();
-            settingsWindow.Show();
-
-      
-
-
-
             Services.Setup.RegisterAsBrowser();
 
             //only set default settings if no settings in registry
@@ -53,8 +47,6 @@ namespace BrowserPicker
                 logWriter.WriteLog("No settings found, creating default settings");
                 Services.Setup.setDefaultSettings();
             }
-            Services.Setup.setDefaultSettings();
-
 
             //if software startet with arguments (happens when opend as default browser by windows) open url from args in specific browser
             //if no arguments submitted (.exe started manually by user), open the settings window
@@ -64,50 +56,42 @@ namespace BrowserPicker
                 logWriter.WriteLog("Submitted URL: " + url);
 
 
-
+                string alwaysAsk = "false";
                 using (RegistryKey key = Registry.CurrentUser.CreateSubKey(@"Software\BrowserPicker\Settings"))
                 {
-                    if (key.GetValue("alwaysAsk", "false").ToString() == "true")
-                    {
-                        logWriter.WriteLog("alwaysAsk = true, open browser select");
-                        /*open browser select menu
-                        *
-                        *
-                        *
-                        *
-                        */
-                        return;
-                    }
+                    alwaysAsk = key.GetValue("alwaysAsk", "false").ToString();
                 }
 
-
-                if (Services.UrlProcessor.handleURL(url))
+                if (alwaysAsk == "true")
+                {
+                    //open browser select menu
+                    logWriter.WriteLog("alwaysAsk = true, open browser select");
+                    SelectView selectWindow = new SelectView(e.Args[0]);
+                    selectWindow.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+                    selectWindow.Show();
+                }
+                //handle url and try to find matching rule for url
+                else if (Services.UrlProcessor.handleURL(url))
                 {
                     logWriter.WriteLog("url handled successfull");
-                    return;
+                    System.Windows.Application.Current.Shutdown();
                 }
                 else
                 {
+                    //open browser select menu
                     logWriter.WriteLog("could not handle url, open browser select");
-
-                    /*open browser select menu
-                     *
-                     *
-                     *
-                     *
-                     */
+                    SelectView selectWindow = new SelectView(e.Args[0]);
+                    selectWindow.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+                    selectWindow.Show();
                 }
             }
             else
             {
                 logWriter.WriteLog("No URL submitted. open settings...");
 
-                /*open settings
-                *
-                *
-                *
-                *
-                */
+                //open settings
+                SettingsView settingsWindow = new SettingsView();
+                settingsWindow.Show();
             }
 
 

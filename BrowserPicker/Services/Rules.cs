@@ -26,6 +26,8 @@ namespace BrowserPicker.Services
                 }
             }
 
+            listOfRules.Sort((x, y) => string.Compare(x.Browser, y.Browser));
+
             return listOfRules;
         }
 

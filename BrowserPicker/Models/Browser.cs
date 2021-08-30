@@ -8,16 +8,16 @@ namespace BrowserPicker.Models
 {
     class Browser
     {
-        public string name;
-        public string exec;
-        public string icon;
+        public string Name { get; set; }
+        public string Exec { get; set; }
+        public string Icon { get; set; }
 
 
         public Browser(string submittedName, string submittedExec, string submittedIcon)
         {
-            name = submittedName;
-            exec = submittedExec;
-            icon = submittedIcon;
+            Name = submittedName;
+            Exec = submittedExec;
+            Icon = submittedIcon;
         }
 
 
