@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Jonathan\source\repos\BrowserPicker\BrowserPicker\obj\Release\netcoreapp3.1\
+C:\Users\Jonathan\source\repos\BrowserPicker_WPF\BrowserPicker\obj\Release\netcoreapp3.1\
 BrowserPicker
 none
 false
 TRACE;RELEASE;NETCOREAPP;NETCOREAPP3_1;
-C:\Users\Jonathan\source\repos\BrowserPicker\BrowserPicker\App.xaml
-11407045341
+C:\Users\Jonathan\source\repos\BrowserPicker_WPF\BrowserPicker\App.xaml
+22011941760
 
-10-1323926596
+111933780791
 192-1533232326
-MainWindow.xaml;
+SelectView.xaml;SettingsView.xaml;
 
 False
 

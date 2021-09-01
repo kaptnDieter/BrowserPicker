@@ -46,7 +46,6 @@ C:\Users\Jonathan\source\repos\BrowserPicker_WPF\BrowserPicker\bin\Debug\netcore
 C:\Users\Jonathan\source\repos\BrowserPicker_WPF\BrowserPicker\bin\Debug\netcoreapp3.1\BrowserPicker.runtimeconfig.dev.json
 C:\Users\Jonathan\source\repos\BrowserPicker_WPF\BrowserPicker\bin\Debug\netcoreapp3.1\BrowserPicker.dll
 C:\Users\Jonathan\source\repos\BrowserPicker_WPF\BrowserPicker\bin\Debug\netcoreapp3.1\BrowserPicker.pdb
-C:\Users\Jonathan\source\repos\BrowserPicker_WPF\BrowserPicker\obj\Debug\netcoreapp3.1\BrowserPicker.csproj.AssemblyReference.cache
 C:\Users\Jonathan\source\repos\BrowserPicker_WPF\BrowserPicker\obj\Debug\netcoreapp3.1\SettingsView.g.cs
 C:\Users\Jonathan\source\repos\BrowserPicker_WPF\BrowserPicker\obj\Debug\netcoreapp3.1\App.g.cs
 C:\Users\Jonathan\source\repos\BrowserPicker_WPF\BrowserPicker\obj\Debug\netcoreapp3.1\BrowserPicker_MarkupCompile.cache

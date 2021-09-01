@@ -16,7 +16,7 @@ namespace BrowserPicker.Services
             List<Rule> listOfRules = new List<Rule>();
 
             //Add Rules
-            using (RegistryKey key = Registry.CurrentUser.CreateSubKey(@"Software\BrowserPicker\rules"))
+            using (RegistryKey key = Registry.CurrentUser.CreateSubKey(@"Software\BrowserPicker\Rules"))
             {
                 App.logWriter.WriteLog("Read registry keys for rules...");
                 foreach (string entryName in key.GetValueNames())
