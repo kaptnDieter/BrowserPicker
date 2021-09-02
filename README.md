@@ -1,6 +1,6 @@
 # BrowserPicker
 
-##ToDo
+## ToDo
 - installer and uninstaller
 - 
 - Add icons to browser select view
