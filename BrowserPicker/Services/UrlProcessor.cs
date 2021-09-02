@@ -19,24 +19,10 @@ namespace BrowserPicker.Services
             List<Rule> listOfRules = new List<Rule>();
             listOfRules = Services.Rules.getRules();
 
-            //write data to log
-            App.logWriter.WriteLog("List of rules:");
-            foreach (var rule in listOfRules)
-            {
-                App.logWriter.WriteLog("browser: " + rule.Browser + ", " + "url: " + rule.Url);
-            }
-
-
             //Get list of available browsers
             List<Browser> listOfBrowsers = new List<Browser>();
             listOfBrowsers = Services.Browsers.getBrowsers();
 
-            //write data to log
-            App.logWriter.WriteLog("List of Browsers:");
-            foreach (var browser in listOfBrowsers)
-            {
-                App.logWriter.WriteLog("name: " + browser.Name + ", " + "exec: " + browser.Exec);
-            }
 
             //check if submitted url matches any rule in listOfRules
             foreach (var rule in listOfRules)

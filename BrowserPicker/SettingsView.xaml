@@ -10,6 +10,8 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="auto" />
             <RowDefinition Height="*" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         
         <Grid.ColumnDefinitions>
@@ -17,7 +19,7 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         
-        <Label Grid.Column="0" Grid.Row="0" Content="Registrierte Regeln" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Label Grid.Column="0" Grid.Row="0" Content="Rules" HorizontalAlignment="Left" VerticalAlignment="Top"/>
         <ListView Grid.Column="0" Grid.Row="1" Name="ListView_listOfRules">
             <ListView.View>
                 <GridView>
@@ -27,7 +29,7 @@
             </ListView.View>
         </ListView>
 
-        <Label Grid.Column="1" Grid.Row="0" Content="Registrierte Browser" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.615,-0.413"/>
+        <Label Grid.Column="1" Grid.Row="0" Content="Browsers" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.615,-0.413"/>
         <ListView Grid.Column="1" Grid.Row="1" Name="ListView_listOfBrowsers">
             <ListView.View>
                 <GridView>
@@ -36,6 +38,14 @@
                 </GridView>
             </ListView.View>
         </ListView>
+
+
+        <Label Grid.Column="0" Grid.Row="2" Content="Add a rule" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.615,-0.413"/>
+
+
+        <Label Grid.Column="1" Grid.Row="2" Content="Other settings" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.615,-0.413"/>
+
+        
         
     </Grid>
 </Window>

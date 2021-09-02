@@ -23,6 +23,8 @@ namespace BrowserPicker.Services
                 {
                     string entryData = key.GetValue(entryName, "").ToString();
                     listOfRules.Add(new Rule(entryName, entryData));
+
+                    App.logWriter.WriteLog("browser: " + entryName + ", " + "url: " + entryData);
                 }
             }
 

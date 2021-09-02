@@ -28,6 +28,8 @@ namespace BrowserPicker.Services
                     string name = subKey.GetValue("", "").ToString();
                     string exec = subKey.OpenSubKey("shell").OpenSubKey("open").OpenSubKey("command").GetValue("", "").ToString();
 
+                    App.logWriter.WriteLog("name: " + name + ", " + "exec: " + exec);
+
                     listOfBrowsers.Add(new Browser(name, exec, ""));
                 }
             }

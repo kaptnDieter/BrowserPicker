@@ -248,7 +248,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:BrowserPicker"
         "ProductCode" = "8:{363F298D-FEA8-4B7E-9E2A-23B40981C04E}"
-        "PackageCode" = "8:{C80B5033-BE98-4FC5-B811-1ABBD1F99AFC}"
+        "PackageCode" = "8:{A45B7E6F-FD26-45AB-A239-E39BD517CC75}"
         "UpgradeCode" = "8:{668B05A6-8BBE-4A24-8B70-86C50E9914B2}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
