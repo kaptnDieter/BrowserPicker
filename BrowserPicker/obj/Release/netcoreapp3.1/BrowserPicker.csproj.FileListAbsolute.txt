@@ -40,4 +40,3 @@ C:\Users\Jonathan\source\repos\BrowserPicker_WPF\BrowserPicker\obj\Release\netco
 C:\Users\Jonathan\source\repos\BrowserPicker_WPF\BrowserPicker\obj\Release\netcoreapp3.1\BrowserPicker.dll
 C:\Users\Jonathan\source\repos\BrowserPicker_WPF\BrowserPicker\obj\Release\netcoreapp3.1\BrowserPicker.pdb
 C:\Users\Jonathan\source\repos\BrowserPicker_WPF\BrowserPicker\obj\Release\netcoreapp3.1\BrowserPicker.genruntimeconfig.cache
-C:\Users\Jonathan\source\repos\BrowserPicker_WPF\BrowserPicker\obj\Release\netcoreapp3.1\BrowserPicker.csproj.AssemblyReference.cache
