@@ -27,7 +27,7 @@ namespace BrowserPicker
         {
 
             //when registry key writeLog is false, LogWriter gets set to false
-            using (RegistryKey key = Registry.CurrentUser.CreateSubKey(@"Software\BrowserPicker\Settings"))
+            using (RegistryKey key = Registry.CurrentUser.CreateSubKey(@"Software\SimpleBlue\BrowserPicker\Settings"))
             {
                 if (key.GetValue("writeLog", "true").ToString() == "false")
                 {
@@ -39,7 +39,8 @@ namespace BrowserPicker
             logWriter.WriteLog("Program Started");
 
 
-            Services.Setup.RegisterAsBrowser();
+            //not necessary anymore. registrations happens during installation
+            //Services.Setup.RegisterAsBrowser();
 
             //only set default settings if no settings in registry
             if (!Services.Setup.checkForDefaultSettings())
@@ -57,7 +58,7 @@ namespace BrowserPicker
 
 
                 string alwaysAsk = "false";
-                using (RegistryKey key = Registry.CurrentUser.CreateSubKey(@"Software\BrowserPicker\Settings"))
+                using (RegistryKey key = Registry.CurrentUser.CreateSubKey(@"Software\SimpleBlue\BrowserPicker\Settings"))
                 {
                     alwaysAsk = key.GetValue("alwaysAsk", "false").ToString();
                 }

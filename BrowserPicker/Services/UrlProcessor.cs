@@ -63,7 +63,7 @@ namespace BrowserPicker.Services
             }
 
             //Check if a default browser is defined in settings
-            using (RegistryKey key = Registry.CurrentUser.CreateSubKey(@"Software\BrowserPicker\Settings"))
+            using (RegistryKey key = Registry.CurrentUser.CreateSubKey(@"Software\SimpleBlue\BrowserPicker\Settings"))
             {
                 string defaultBrowser = key.GetValue("defaultBrowser", "").ToString();
                 if (defaultBrowser != "")
