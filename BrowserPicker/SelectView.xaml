@@ -5,37 +5,69 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BrowserPicker"
         mc:Ignorable="d"
-        Title="SelectView" Height="Auto" Width="300" SizeToContent="Height">
-    <Grid>
+        Title="Select browser" Height="315" Width="411" SizeToContent="Height" Background="#FFE7E7E7" FontSize="16"
+        WindowStyle="None">
 
-       
+    <Window.Resources>
+        <Style x:Key="UnderlinedButton" TargetType="{x:Type Button}">
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="BorderBrush" Value="#6f6f6f" />
+                    <Setter Property="Background" Value="#bababa" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
 
-        <Grid.RowDefinitions>
-            <RowDefinition Height="auto" />
-            <RowDefinition Height="auto" MinHeight="30"/>
-            <RowDefinition Height="auto" />
-            <RowDefinition Height="Auto" MinHeight="30"/>
-        </Grid.RowDefinitions>
 
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
-        </Grid.ColumnDefinitions>
 
-        <Label Grid.Column="0" Grid.Row="0" Content="Browser auswählen"/>
 
-        <ItemsControl Grid.Column="0" Grid.Row="1" Name="ItemsControl_listOfBrowsers">
-            <ItemsControl.ItemTemplate>
-                <DataTemplate>
-                    <Button Content="{Binding Name}" BorderBrush="Black" Height="40" Click="browserSelected_Click" Margin="0,10,0,10" Tag="{Binding Exec}"/>
-                </DataTemplate>
-            </ItemsControl.ItemTemplate>
-        </ItemsControl>
 
-        <Label Grid.Column="0" Grid.Row="2" Content="Betroffene URL:"/>
-        
-        <Label Grid.Column="0" Grid.Row="3" Content="url..." Name="Label_url"/>
-        
-    </Grid>
+    <Border BorderThickness="0" Margin="10,10,10,10">
+        <StackPanel>
+
+            <Label Content="Choose browser" FontSize="28" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,20"/>
+
+            <ItemsControl Name="ItemsControl_listOfBrowsers">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Button Height="65" Click="browserSelected_Click" Tag="{Binding Exec}" Style="{StaticResource UnderlinedButton}">
+                            <Button.Template>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="2">
+                                        <StackPanel Orientation="Horizontal" Margin="1,0,0,0" >
+                                            <Border Width="38" Height="38" Background="orange" Margin="10,0,7,0">
+                                                <Image Width="38" Height="38"  />
+                                            </Border>
+                                            <Label Content="{Binding Name}" HorizontalAlignment="Left" VerticalAlignment="Top" />
+                                        </StackPanel>
+                                    </Border>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+
+
+            <StackPanel Orientation="Horizontal" Margin="0,40,0,0">
+                <Label Content="Selected url:" />
+                <Label Content="..." Name="Label_url"/>
+            </StackPanel>
+
+
+        </StackPanel>
+    </Border>
+
+
+
+
+
+
+
 </Window>
 
 

@@ -30,6 +30,7 @@ namespace BrowserPicker.Services
 
                     App.logWriter.WriteLog("name: " + name + ", " + "exec: " + exec);
 
+
                     listOfBrowsers.Add(new Browser(name, exec, ""));
                 }
             }

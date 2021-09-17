@@ -99,7 +99,23 @@ namespace BrowserPicker.Services
             }
         }
 
+        public static bool addUserRule(string url, string browser)
+        {
+            try
+            {
+                using (RegistryKey key = Registry.CurrentUser.CreateSubKey(@"Software\SimpleBlue\BrowserPicker\User\Rules"))
+                {
+                    key.SetValue(url, browser);
+                }
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
 
+      
 
     }
 }

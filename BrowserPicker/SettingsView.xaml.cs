@@ -2,9 +2,11 @@
 using BrowserPicker.Services;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Data;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
 
 namespace BrowserPicker
 {
@@ -20,6 +22,7 @@ namespace BrowserPicker
 
             List<Browser> browsers = new List<Browser>();
             browsers = Services.Browsers.getBrowsers();
+
 
             Datagrid_listOfRules.ItemsSource = App.globalRules;
             ListView_listOfBrowsers.ItemsSource = browsers;
@@ -37,6 +40,10 @@ namespace BrowserPicker
             Combobox_defaultBrowser.SelectedItem = App.globalSettings.Find(x => x.Name.Equals("defaultBrowser")).Value;
 
 
+            foreach (Browser browser in browsers)
+            {
+                Combobox_newRuleBrowser.Items.Add(browser.Name);
+            }
         }
 
 
@@ -62,9 +69,35 @@ namespace BrowserPicker
         private void deleteRule(object sender, RoutedEventArgs e)
         {
             string url = ((Button)sender).Tag.ToString();
-           if (Services.Rules.deleteUserRule(url))
+
+            if (Services.Rules.deleteUserRule(url))
             {
-                //DELETE ROW HERE
+                List<Models.Rule> userRules = Services.Rules.getUserRules();
+                List<Models.Rule> enterpriseRules = Services.Rules.getEnterpriseRules();
+                App.globalRules = Services.Rules.mergeRules(userRules, enterpriseRules);
+                Datagrid_listOfRules.ItemsSource = App.globalRules;
+            }
+            else
+            {
+                MessageBox.Show("Error while deleting rule");
+            }
+        }
+
+        private void addRule(object sender, RoutedEventArgs e)
+        {
+            string url = Textbox_newRuleUrl.Text ?? "";
+            string browser = (string)Combobox_newRuleBrowser.SelectedItem ?? "";
+
+            if (Services.Rules.addUserRule(url, browser))
+            {
+                List<Models.Rule> userRules = Services.Rules.getUserRules();
+                List<Models.Rule> enterpriseRules = Services.Rules.getEnterpriseRules();
+                App.globalRules = Services.Rules.mergeRules(userRules, enterpriseRules);
+                Datagrid_listOfRules.ItemsSource = App.globalRules;
+            }
+            else
+            {
+                MessageBox.Show("Error while creating rule");
             }
         }
 

@@ -77,9 +77,10 @@ namespace BrowserPicker.Services
 
         public static bool UrlMatch(string url, string rule)
         {
-            //add ^ and $ to the rule string to make sure thow whole string has to match
+            //add ^ and $ to the rule string to make sure the whole string has to match
+            //(/?) means the submitted url can end on a / also if the rule does not
             //replace * with [^ ]* which is an asterix for zero or more non space characters
-            string regexPattern = Regex.Replace("^" + rule + "$", "\\*", "[^ ]*");
+            string regexPattern = Regex.Replace("^" + rule + "(/?)$", "\\*", "[^ ]*");
             var regex = new Regex(regexPattern);
             return regex.Match(url).Success;
         }

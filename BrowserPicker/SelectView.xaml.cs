@@ -39,7 +39,22 @@ namespace BrowserPicker
         {
             string exec = (string)((Button)sender).Tag;
             Process.Start(exec, url);
-            System.Windows.Application.Current.Shutdown();
+            //System.Windows.Application.Current.Shutdown();
+            Close();
+        }
+
+
+        protected override void OnDeactivated(EventArgs e)
+        {
+            base.OnDeactivated(e);
+            try
+            {
+                Close();
+            }
+            catch
+            {
+
+            }
         }
 
 

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BrowserPicker"
         mc:Ignorable="d"
-        Title="Einstellungen" Height="450" Width="800">
+        Title="Settings" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto" />
@@ -27,7 +27,7 @@
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Click="deleteRule" Tag="{Binding Url}">Details</Button>
+                            <Button Click="deleteRule" Tag="{Binding Url}">Delete</Button>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
@@ -46,17 +46,30 @@
 
 
         <Label Grid.Column="0" Grid.Row="2" Content="Add a rule" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.615,-0.413"/>
-        <StackPanel Grid.Column="0" Grid.Row="3">
-            <StackPanel Orientation="Horizontal" Margin="4,4,4,4">
-                <Label Content="Url:"/>
-                <TextBox Text="" TextWrapping="Wrap" Width="120"/>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" Margin="4,4,4,4">
-                <Label Content="Browser:"/>
-                <ComboBox Name="" Width="200" SelectionChanged=""/>
-            </StackPanel>
-            <Button Content="Add" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="4,4,4,4" />
-        </StackPanel>
+        <Grid Grid.Column="0" Grid.Row="3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Label Content="Url:" Grid.Column="0" Grid.Row="0"/>
+            <TextBox Name="Textbox_newRuleUrl" Text="" Grid.Column="1" Grid.Row="0" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Center" Width="200"/>
+
+            <Label Content="Browser:" Grid.Column="0" Grid.Row="1"/>
+            <ComboBox Name="Combobox_newRuleBrowser" Grid.Column="1" Grid.Row="1" Width="200" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+
+            <Button Content="Add" Click="addRule" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,4,4,4" Width="60" />
+        </Grid>
+
+
+
+
 
 
         <Label Grid.Column="1" Grid.Row="2" Content="Other settings" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.615,-0.413"/>

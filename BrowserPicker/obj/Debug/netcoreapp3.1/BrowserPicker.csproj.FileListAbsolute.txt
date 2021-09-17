@@ -63,3 +63,9 @@ C:\Users\Jonathan\source\repos\GitHub\BrowserPicker\BrowserPicker\obj\Debug\netc
 C:\Users\Jonathan\source\repos\GitHub\BrowserPicker\BrowserPicker\obj\Debug\netcoreapp3.1\App.baml
 C:\Users\Jonathan\source\repos\GitHub\BrowserPicker\BrowserPicker\obj\Debug\netcoreapp3.1\SelectView.baml
 C:\Users\Jonathan\source\repos\GitHub\BrowserPicker\BrowserPicker\obj\Debug\netcoreapp3.1\BrowserPicker.csproj.AssemblyReference.cache
+C:\Users\Jonathan\source\repos\GitHub\BrowserPicker\BrowserPicker\bin\Debug\netcoreapp3.1\Microsoft.Win32.SystemEvents.dll
+C:\Users\Jonathan\source\repos\GitHub\BrowserPicker\BrowserPicker\bin\Debug\netcoreapp3.1\System.Drawing.Common.dll
+C:\Users\Jonathan\source\repos\GitHub\BrowserPicker\BrowserPicker\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\Jonathan\source\repos\GitHub\BrowserPicker\BrowserPicker\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\Jonathan\source\repos\GitHub\BrowserPicker\BrowserPicker\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\Jonathan\source\repos\GitHub\BrowserPicker\BrowserPicker\obj\Debug\netcoreapp3.1\BrowserPicker.csproj.CopyComplete
