@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media;
 using BrowserPicker.Helpers;
 using BrowserPicker.Models;
 using Microsoft.Win32;
@@ -27,11 +28,14 @@ namespace BrowserPicker.Services
                     var subKey = key.OpenSubKey(subkeyName);
                     string name = subKey.GetValue("", "").ToString();
                     string exec = subKey.OpenSubKey("shell").OpenSubKey("open").OpenSubKey("command").GetValue("", "").ToString();
+                    ImageSource icon = Helpers.IconHandler.GetIcon(exec.Replace("\"", ""));
 
-                    App.logWriter.WriteLog("name: " + name + ", " + "exec: " + exec);
+                    App.logWriter.WriteLog("name: " + name + ", " + "exec: " + exec + ", " + "source: " + icon);
 
 
-                    listOfBrowsers.Add(new Browser(name, exec, ""));
+                    
+
+                    listOfBrowsers.Add(new Browser(name, exec, icon));
                 }
             }
 

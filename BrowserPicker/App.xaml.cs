@@ -85,6 +85,7 @@ namespace BrowserPicker
                     SelectView selectWindow = new SelectView(e.Args[0]);
                     selectWindow.WindowStartupLocation = WindowStartupLocation.CenterScreen;
                     selectWindow.Show();
+                    selectWindow.Activate();
                 }
             }
             else
@@ -94,6 +95,7 @@ namespace BrowserPicker
                 //open settings
                 SettingsView settingsWindow = new SettingsView();
                 settingsWindow.Show();
+                settingsWindow.Activate();
             }
 
 

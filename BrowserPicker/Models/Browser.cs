@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media;
 
 namespace BrowserPicker.Models
 {
@@ -10,10 +11,10 @@ namespace BrowserPicker.Models
     {
         public string Name { get; set; }
         public string Exec { get; set; }
-        public string Icon { get; set; }
+        public ImageSource Icon { get; set; }
 
 
-        public Browser(string submittedName, string submittedExec, string submittedIcon)
+        public Browser(string submittedName, string submittedExec, ImageSource submittedIcon)
         {
             Name = submittedName;
             Exec = submittedExec;

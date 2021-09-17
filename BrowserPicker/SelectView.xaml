@@ -39,8 +39,8 @@
                                 <ControlTemplate TargetType="{x:Type Button}">
                                     <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="2">
                                         <StackPanel Orientation="Horizontal" Margin="1,0,0,0" >
-                                            <Border Width="38" Height="38" Background="orange" Margin="10,0,7,0">
-                                                <Image Width="38" Height="38"  />
+                                            <Border Width="44" Height="44" Background="orange" Margin="10,0,7,0">
+                                                <Image Width="38" Height="38" Source="{Binding Icon}" />
                                             </Border>
                                             <Label Content="{Binding Name}" HorizontalAlignment="Left" VerticalAlignment="Top" />
                                         </StackPanel>

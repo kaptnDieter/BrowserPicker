@@ -29,10 +29,16 @@ namespace BrowserPicker
             List<Browser> browsers = new List<Browser>();
             browsers = Services.Browsers.getBrowsers();
 
-            ItemsControl_listOfBrowsers.ItemsSource = browsers;
+            foreach(Browser browser in browsers)
+            {
+                string cleanIconSource = browser.Exec.Replace("\"", "");
+                browser.Icon = Helpers.IconHandler.GetIcon(cleanIconSource);
+            }
 
+            ItemsControl_listOfBrowsers.ItemsSource = browsers;
             Label_url.Content = url;
         }
+
 
 
         void browserSelected_Click(object sender, RoutedEventArgs e)

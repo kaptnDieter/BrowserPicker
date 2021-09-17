@@ -62,3 +62,9 @@ C:\Users\Jonathan\source\repos\GitHub\BrowserPicker\BrowserPicker\obj\Release\ne
 C:\Users\Jonathan\source\repos\GitHub\BrowserPicker\BrowserPicker\obj\Release\netcoreapp3.1\BrowserPicker.dll
 C:\Users\Jonathan\source\repos\GitHub\BrowserPicker\BrowserPicker\obj\Release\netcoreapp3.1\BrowserPicker.pdb
 C:\Users\Jonathan\source\repos\GitHub\BrowserPicker\BrowserPicker\obj\Release\netcoreapp3.1\BrowserPicker.genruntimeconfig.cache
+C:\Users\Jonathan\source\repos\GitHub\BrowserPicker\BrowserPicker\bin\Release\netcoreapp3.1\Microsoft.Win32.SystemEvents.dll
+C:\Users\Jonathan\source\repos\GitHub\BrowserPicker\BrowserPicker\bin\Release\netcoreapp3.1\System.Drawing.Common.dll
+C:\Users\Jonathan\source\repos\GitHub\BrowserPicker\BrowserPicker\bin\Release\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\Jonathan\source\repos\GitHub\BrowserPicker\BrowserPicker\bin\Release\netcoreapp3.1\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\Jonathan\source\repos\GitHub\BrowserPicker\BrowserPicker\bin\Release\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\Jonathan\source\repos\GitHub\BrowserPicker\BrowserPicker\obj\Release\netcoreapp3.1\BrowserPicker.csproj.CopyComplete

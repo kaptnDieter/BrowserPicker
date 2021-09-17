@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BrowserPicker"
         mc:Ignorable="d"
-        Title="Settings" Height="450" Width="800">
+        Title="Settings" Height="800" Width="1000">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto" />
@@ -20,7 +20,7 @@
         </Grid.ColumnDefinitions>
 
         <Label Grid.Column="0" Grid.Row="0" Content="Rules" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-        <DataGrid Grid.Row="1" Name="Datagrid_listOfRules" AutoGenerateColumns="False" HorizontalAlignment="Center" VerticalAlignment="Top" Width="400">
+        <DataGrid Grid.Row="1" Name="Datagrid_listOfRules" AutoGenerateColumns="False" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5,5,5,5">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Browser" Binding="{Binding Browser}"/>
                 <DataGridTextColumn Header="Url" Binding="{Binding Url}"/>
@@ -35,7 +35,7 @@
         </DataGrid>
 
         <Label Grid.Column="1" Grid.Row="0" Content="Browsers" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.615,-0.413"/>
-        <ListView Grid.Column="1" Grid.Row="1" Name="ListView_listOfBrowsers">
+        <ListView Grid.Column="1" Grid.Row="1" Name="ListView_listOfBrowsers" Margin="5,5,5,5">
             <ListView.View>
                 <GridView>
                     <GridViewColumn DisplayMemberBinding="{Binding Name}" Header="Name" Width="auto"/>
