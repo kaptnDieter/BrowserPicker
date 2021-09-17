@@ -2,7 +2,6 @@
 
 ## ToDo
 - Add icons to browser select view?
-- make match still true, wenn url end with /
 
 
 ## Links
