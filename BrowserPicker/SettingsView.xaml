@@ -13,21 +13,26 @@
             <RowDefinition Height="auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        
+
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-        
+
         <Label Grid.Column="0" Grid.Row="0" Content="Rules" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-        <ListView Grid.Column="0" Grid.Row="1" Name="ListView_listOfRules">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn DisplayMemberBinding="{Binding Browser}" Header="Browser" Width="auto"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding Url}" Header="Url" Width="auto"/>
-                </GridView>
-            </ListView.View>
-        </ListView>
+        <DataGrid Grid.Row="1" Name="Datagrid_listOfRules" AutoGenerateColumns="False" HorizontalAlignment="Center" VerticalAlignment="Top" Width="400">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Browser" Binding="{Binding Browser}"/>
+                <DataGridTextColumn Header="Url" Binding="{Binding Url}"/>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Click="deleteRule" Tag="{Binding Url}">Details</Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
 
         <Label Grid.Column="1" Grid.Row="0" Content="Browsers" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.615,-0.413"/>
         <ListView Grid.Column="1" Grid.Row="1" Name="ListView_listOfBrowsers">
@@ -41,11 +46,28 @@
 
 
         <Label Grid.Column="0" Grid.Row="2" Content="Add a rule" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.615,-0.413"/>
+        <StackPanel Grid.Column="0" Grid.Row="3">
+            <StackPanel Orientation="Horizontal" Margin="4,4,4,4">
+                <Label Content="Url:"/>
+                <TextBox Text="" TextWrapping="Wrap" Width="120"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="4,4,4,4">
+                <Label Content="Browser:"/>
+                <ComboBox Name="" Width="200" SelectionChanged=""/>
+            </StackPanel>
+            <Button Content="Add" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="4,4,4,4" />
+        </StackPanel>
 
 
         <Label Grid.Column="1" Grid.Row="2" Content="Other settings" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.615,-0.413"/>
+        <StackPanel Grid.Column="1" Grid.Row="3">
+            <CheckBox Name="Checkbox_globalSettings_alwaysAsk" Content="Alway ask which browser to use" HorizontalAlignment="Left" Margin="4,4,4,4" Checked="alwaysAsk_Changed" Unchecked="alwaysAsk_Changed"/>
+            <CheckBox Name="Checkbox_globalSettings_writeLog" Content="Write to log file" Margin="4,4,4,4" HorizontalAlignment="Left" Checked="writeLog_Changed" Unchecked="writeLog_Changed"/>
+            <StackPanel Orientation="Horizontal" Margin="4,4,4,4">
+                <Label Content="Default Browser:"/>
+                <ComboBox Name="Combobox_defaultBrowser" Width="200" SelectionChanged="Combobox_defaultBrowser_SelectionChanged"/>
+            </StackPanel>
+        </StackPanel>
 
-        
-        
     </Grid>
 </Window>

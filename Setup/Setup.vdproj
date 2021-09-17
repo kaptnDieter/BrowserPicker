@@ -50,6 +50,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
             }
         }
         "Release"
@@ -248,7 +256,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:BrowserPicker"
         "ProductCode" = "8:{363F298D-FEA8-4B7E-9E2A-23B40981C04E}"
-        "PackageCode" = "8:{A45B7E6F-FD26-45AB-A239-E39BD517CC75}"
+        "PackageCode" = "8:{658AF4DE-5492-4D4A-B251-793EFC50BB7A}"
         "UpgradeCode" = "8:{668B05A6-8BBE-4A24-8B70-86C50E9914B2}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
@@ -661,56 +669,112 @@
                                     "Transitive" = "11:FALSE"
                                         "Keys"
                                         {
-                                            "{60EA8692-D2D5-43EB-80DC-7906BF13D6EF}:_43625CAE50984BED9B656E6DDA11BB03"
+                                            "{60EA8692-D2D5-43EB-80DC-7906BF13D6EF}:_321874572BAD4706ACD2F4A1BA7C5288"
                                             {
-                                            "Name" = "8:Rules"
+                                            "Name" = "8:User"
                                             "Condition" = "8:"
                                             "AlwaysCreate" = "11:FALSE"
                                             "DeleteAtUninstall" = "11:FALSE"
                                             "Transitive" = "11:FALSE"
                                                 "Keys"
                                                 {
+                                                    "{60EA8692-D2D5-43EB-80DC-7906BF13D6EF}:_0F485DD4CFB84FC0BA73499BEED076C5"
+                                                    {
+                                                    "Name" = "8:Rules"
+                                                    "Condition" = "8:"
+                                                    "AlwaysCreate" = "11:FALSE"
+                                                    "DeleteAtUninstall" = "11:FALSE"
+                                                    "Transitive" = "11:FALSE"
+                                                        "Keys"
+                                                        {
+                                                        }
+                                                        "Values"
+                                                        {
+                                                        }
+                                                    }
+                                                    "{60EA8692-D2D5-43EB-80DC-7906BF13D6EF}:_9C7A9AE849774C6DA68EA5A569E9DD76"
+                                                    {
+                                                    "Name" = "8:Settings"
+                                                    "Condition" = "8:"
+                                                    "AlwaysCreate" = "11:FALSE"
+                                                    "DeleteAtUninstall" = "11:FALSE"
+                                                    "Transitive" = "11:FALSE"
+                                                        "Keys"
+                                                        {
+                                                        }
+                                                        "Values"
+                                                        {
+                                                            "{ADCFDA98-8FDD-45E4-90BC-E3D20B029870}:_8474B884A8B543C7A7A062CA0FD2AEEC"
+                                                            {
+                                                            "Name" = "8:alwaysAsk"
+                                                            "Condition" = "8:"
+                                                            "Transitive" = "11:FALSE"
+                                                            "ValueTypes" = "3:1"
+                                                            "Value" = "8:False"
+                                                            }
+                                                            "{ADCFDA98-8FDD-45E4-90BC-E3D20B029870}:_978A65A5991041278726EA171A8A532E"
+                                                            {
+                                                            "Name" = "8:writeLog"
+                                                            "Condition" = "8:"
+                                                            "Transitive" = "11:FALSE"
+                                                            "ValueTypes" = "3:1"
+                                                            "Value" = "8:True"
+                                                            }
+                                                            "{ADCFDA98-8FDD-45E4-90BC-E3D20B029870}:_FB9D54F0F0DD418D83E9546D26E282E5"
+                                                            {
+                                                            "Name" = "8:defaultBrowser"
+                                                            "Condition" = "8:"
+                                                            "Transitive" = "11:FALSE"
+                                                            "ValueTypes" = "3:1"
+                                                            "Value" = "8:"
+                                                            }
+                                                        }
+                                                    }
                                                 }
                                                 "Values"
                                                 {
                                                 }
                                             }
-                                            "{60EA8692-D2D5-43EB-80DC-7906BF13D6EF}:_7A9A9C8E6C8C495990629CC1097A1AC4"
+                                            "{60EA8692-D2D5-43EB-80DC-7906BF13D6EF}:_C280856E46DA4AB79FDA80F16C74BF6E"
                                             {
-                                            "Name" = "8:Settings"
+                                            "Name" = "8:Enterprise"
                                             "Condition" = "8:"
                                             "AlwaysCreate" = "11:FALSE"
                                             "DeleteAtUninstall" = "11:FALSE"
                                             "Transitive" = "11:FALSE"
                                                 "Keys"
                                                 {
+                                                    "{60EA8692-D2D5-43EB-80DC-7906BF13D6EF}:_4393205EADDE49AF9C0C0616A33275B1"
+                                                    {
+                                                    "Name" = "8:Settings"
+                                                    "Condition" = "8:"
+                                                    "AlwaysCreate" = "11:FALSE"
+                                                    "DeleteAtUninstall" = "11:FALSE"
+                                                    "Transitive" = "11:FALSE"
+                                                        "Keys"
+                                                        {
+                                                        }
+                                                        "Values"
+                                                        {
+                                                        }
+                                                    }
+                                                    "{60EA8692-D2D5-43EB-80DC-7906BF13D6EF}:_64EC3710612C4E2CA4ED1E740E1D524C"
+                                                    {
+                                                    "Name" = "8:Rules"
+                                                    "Condition" = "8:"
+                                                    "AlwaysCreate" = "11:FALSE"
+                                                    "DeleteAtUninstall" = "11:FALSE"
+                                                    "Transitive" = "11:FALSE"
+                                                        "Keys"
+                                                        {
+                                                        }
+                                                        "Values"
+                                                        {
+                                                        }
+                                                    }
                                                 }
                                                 "Values"
                                                 {
-                                                    "{ADCFDA98-8FDD-45E4-90BC-E3D20B029870}:_8474B884A8B543C7A7A062CA0FD2AEEC"
-                                                    {
-                                                    "Name" = "8:alwaysAsk"
-                                                    "Condition" = "8:"
-                                                    "Transitive" = "11:FALSE"
-                                                    "ValueTypes" = "3:1"
-                                                    "Value" = "8:false"
-                                                    }
-                                                    "{ADCFDA98-8FDD-45E4-90BC-E3D20B029870}:_978A65A5991041278726EA171A8A532E"
-                                                    {
-                                                    "Name" = "8:writeLog"
-                                                    "Condition" = "8:"
-                                                    "Transitive" = "11:FALSE"
-                                                    "ValueTypes" = "3:1"
-                                                    "Value" = "8:true"
-                                                    }
-                                                    "{ADCFDA98-8FDD-45E4-90BC-E3D20B029870}:_FB9D54F0F0DD418D83E9546D26E282E5"
-                                                    {
-                                                    "Name" = "8:defaultBrowser"
-                                                    "Condition" = "8:"
-                                                    "Transitive" = "11:FALSE"
-                                                    "ValueTypes" = "3:1"
-                                                    "Value" = "8:"
-                                                    }
                                                 }
                                             }
                                         }

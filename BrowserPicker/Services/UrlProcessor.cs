@@ -16,8 +16,7 @@ namespace BrowserPicker.Services
         public static bool handleURL(string url)
         {
             //Get list of rules
-            List<Rule> listOfRules = new List<Rule>();
-            listOfRules = Services.Rules.getRules();
+            List<Rule> listOfRules = App.globalRules;
 
             //Get list of available browsers
             List<Browser> listOfBrowsers = new List<Browser>();
@@ -49,9 +48,8 @@ namespace BrowserPicker.Services
             }
 
             //Check if a default browser is defined in settings
-            using (RegistryKey key = Registry.CurrentUser.CreateSubKey(@"Software\SimpleBlue\BrowserPicker\Settings"))
-            {
-                string defaultBrowser = key.GetValue("defaultBrowser", "").ToString();
+                string defaultBrowser = App.globalSettings.Find(x => x.Name.Equals("defaultBrowser")).Value;
+
                 if (defaultBrowser != "")
                 {
                     string browserExec = findBrowserInList(defaultBrowser, listOfBrowsers);
@@ -73,7 +71,6 @@ namespace BrowserPicker.Services
                 {
                     return false;
                 }
-            }
         }
 
 

@@ -12,10 +12,12 @@ namespace BrowserPicker.Services
 {
     class Setup
     {
+        /*
+         * 
         //set the dault values for the settings
-        public static void setDefaultSettings()
+        public static void setDefaultUserSettings()
         {
-            using (RegistryKey key = Registry.CurrentUser.CreateSubKey(@"Software\SimpleBlue\BrowserPicker\Settings"))
+            using (RegistryKey key = Registry.CurrentUser.CreateSubKey(@"Software\SimpleBlue\BrowserPicker\User\Settings"))
             {
                 key.SetValue("writeLog", "true");
                 key.SetValue("alwaysAsk", "false");
@@ -24,9 +26,9 @@ namespace BrowserPicker.Services
         }
 
         //check if any settings are set
-        public static bool checkForDefaultSettings()
+        public static bool checkForDefaultUserSettings()
         {
-            using (RegistryKey key = Registry.CurrentUser.CreateSubKey(@"Software\SimpleBlue\BrowserPicker\Settings"))
+            using (RegistryKey key = Registry.CurrentUser.CreateSubKey(@"Software\SimpleBlue\BrowserPicker\User\Settings"))
             {
                 if (key.ValueCount > 0)
                 {
@@ -44,8 +46,9 @@ namespace BrowserPicker.Services
         //https://docs.microsoft.com/de-de/windows/win32/shell/start-menu-reg?redirectedfrom=MSDN
         //https://stackoverflow.com/questions/32354861/how-to-find-the-default-browser-via-the-registry-on-windows-10
         //https://www.codeproject.com/Articles/4808/All-you-wanted-to-know-about-the-Registry-with-C-P
+        
+        
         public static void RegisterAsBrowser()
-        //-------------------------------------------------------------------------------------------------------------
         {
             string exe = Process.GetCurrentProcess().MainModule.FileName;
 
@@ -100,6 +103,7 @@ namespace BrowserPicker.Services
                 key.SetValue("", value);
             }
         }
+        */
 
     }
 }

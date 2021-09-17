@@ -1,4 +1,5 @@
 ﻿using BrowserPicker.Helpers;
+using BrowserPicker.Models;
 using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
@@ -18,18 +19,23 @@ namespace BrowserPicker
     /// </summary>
     public partial class App : Application
     {
-        public static string url { get; set; } = "https://www.google.com";
-
         public static LogWriter logWriter = new LogWriter(true);
-
+        public static List<Setting> globalSettings = new List<Setting>();
+        public static List<Models.Rule> globalRules = new List<Models.Rule>();
 
         private void App_Startup(object sender, StartupEventArgs e)
         {
-
             //when registry key writeLog is false, LogWriter gets set to false
-            using (RegistryKey key = Registry.CurrentUser.CreateSubKey(@"Software\SimpleBlue\BrowserPicker\Settings"))
+            using (RegistryKey key = Registry.CurrentUser.CreateSubKey(@"Software\SimpleBlue\BrowserPicker\User\Settings"))
             {
-                if (key.GetValue("writeLog", "true").ToString() == "false")
+                if (key.GetValue("writeLog", "True").ToString() == "False")
+                {
+                    logWriter.useLog = false;
+                }
+            }
+            using (RegistryKey key = Registry.CurrentUser.CreateSubKey(@"Software\SimpleBlue\BrowserPicker\Enterprise\Settings"))
+            {
+                if (key.GetValue("writeLog", "True").ToString() == "False")
                 {
                     logWriter.useLog = false;
                 }
@@ -39,34 +45,29 @@ namespace BrowserPicker
             logWriter.WriteLog("Program Started");
 
 
-            //not necessary anymore. registrations happens during installation
-            //Services.Setup.RegisterAsBrowser();
+            //Get user and enterprise settings, merge settings and set as global
+            List<Setting> userSettings = Services.Settings.getUserSettings();
+            List<Setting> enterpriseSettings = Services.Settings.getEnterpriseSettings();
+            globalSettings = Services.Settings.mergeSettings(userSettings, enterpriseSettings);
 
-            //only set default settings if no settings in registry
-            if (!Services.Setup.checkForDefaultSettings())
-            {
-                logWriter.WriteLog("No settings found, creating default settings");
-                Services.Setup.setDefaultSettings();
-            }
+            //Get user and enterprise rules, merge rules and set as global
+            List<Models.Rule> userRules = Services.Rules.getUserRules();
+            List<Models.Rule> enterpriseRules = Services.Rules.getEnterpriseRules();
+            globalRules = Services.Rules.mergeRules(userRules, enterpriseRules);
+
 
             //if software startet with arguments (happens when opend as default browser by windows) open url from args in specific browser
             //if no arguments submitted (.exe started manually by user), open the settings window
             if (e.Args.Length > 0)
             {
-                url = e.Args[0];
+                string url = e.Args[0];
                 logWriter.WriteLog("Submitted URL: " + url);
 
 
-                string alwaysAsk = "false";
-                using (RegistryKey key = Registry.CurrentUser.CreateSubKey(@"Software\SimpleBlue\BrowserPicker\Settings"))
-                {
-                    alwaysAsk = key.GetValue("alwaysAsk", "false").ToString();
-                }
-
-                if (alwaysAsk == "true")
+                if (App.globalSettings.Find(x => x.Name.Equals("alwaysAsk")).Value == "True")
                 {
                     //open browser select menu
-                    logWriter.WriteLog("alwaysAsk = true, open browser select");
+                    logWriter.WriteLog("alwaysAsk = True, open browser select");
                     SelectView selectWindow = new SelectView(e.Args[0]);
                     selectWindow.WindowStartupLocation = WindowStartupLocation.CenterScreen;
                     selectWindow.Show();
