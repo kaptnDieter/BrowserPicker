@@ -2,8 +2,6 @@
 
 ## ToDo
 - Add icons to browser select view?
-- make rules editable by user
-- remove rule from list, when deleted
 - make match still true, wenn url end with /
 
 
