@@ -1,7 +1,7 @@
 # BrowserPicker
 
 ## ToDo
-- Add icons to browser select view?
+- 
 
 
 ## Links
