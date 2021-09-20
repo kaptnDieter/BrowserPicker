@@ -1,7 +1,7 @@
 # BrowserPicker
 
 ## ToDo
-- 
+- Regel per GPO, dass Benutzer-URL-Regeln ignoriert werden
 
 
 ## Links
