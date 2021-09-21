@@ -1,7 +1,7 @@
 # BrowserPicker
 
 ## ToDo
-- Regel per GPO, dass Benutzer-URL-Regeln ignoriert werden
+- URl rules disablen (oder den delete button), wenn eine enterprise rule
 
 
 ## Links
