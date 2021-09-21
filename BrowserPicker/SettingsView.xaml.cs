@@ -4,8 +4,10 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Data;
+using System.Globalization;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Data;
 using System.Windows.Media;
 
 namespace BrowserPicker
@@ -27,8 +29,11 @@ namespace BrowserPicker
             Datagrid_listOfRules.ItemsSource = App.globalRules;
             ListView_listOfBrowsers.ItemsSource = browsers;
 
-            Checkbox_globalSettings_alwaysAsk.IsChecked = (App.globalSettings.Find(x => x.Name.Equals("alwaysAsk")).Value == "True");
-            Checkbox_globalSettings_writeLog.IsChecked = (App.globalSettings.Find(x => x.Name.Equals("writeLog")).Value == "True");
+            Checkbox_globalSettings_alwaysAsk.IsChecked = App.globalSettings.Find(x => x.Name.Equals("alwaysAsk")).Value == "True";
+            Checkbox_globalSettings_alwaysAsk.IsEnabled = (App.globalSettings.Find(x => x.Name.Equals("alwaysAsk")).Enterprise == false);
+
+            Checkbox_globalSettings_writeLog.IsChecked = App.globalSettings.Find(x => x.Name.Equals("writeLog")).Value == "True";
+            Checkbox_globalSettings_writeLog.IsEnabled = (App.globalSettings.Find(x => x.Name.Equals("writeLog")).Enterprise == false);
 
 
 
@@ -38,12 +43,17 @@ namespace BrowserPicker
                 Combobox_defaultBrowser.Items.Add(browser.Name);
             }
             Combobox_defaultBrowser.SelectedItem = App.globalSettings.Find(x => x.Name.Equals("defaultBrowser")).Value;
+            Combobox_defaultBrowser.IsEnabled = (App.globalSettings.Find(x => x.Name.Equals("defaultBrowser")).Enterprise == false);
 
 
             foreach (Browser browser in browsers)
             {
                 Combobox_newRuleBrowser.Items.Add(browser.Name);
             }
+
+
+            button_AddRule.IsEnabled = (App.globalSettings.Find(x => x.Name.Equals("allowUserRules")).Value != "False");
+
         }
 
 
@@ -100,6 +110,9 @@ namespace BrowserPicker
                 MessageBox.Show("Error while creating rule");
             }
         }
+
+
+
 
 
 

@@ -20,9 +20,9 @@ namespace BrowserPicker.Services
                 foreach (string entryName in key.GetValueNames())
                 {
                     string entryData = key.GetValue(entryName, "").ToString();
-                    listOfSettings.Add(new Setting(entryName, entryData));
+                    listOfSettings.Add(new Setting(entryName, entryData, false));
 
-                    App.logWriter.WriteLog("ruleName: " + entryName + ", " + "ruleValue: " + entryData);
+                    App.logWriter.WriteLog("settingName: " + entryName + ", " + "settingValue: " + entryData);
                 }
             }
 
@@ -41,28 +41,30 @@ namespace BrowserPicker.Services
                 foreach (string entryName in key.GetValueNames())
                 {
                     string entryData = key.GetValue(entryName, "").ToString();
-                    listOfSettings.Add(new Setting(entryName, entryData));
+                    listOfSettings.Add(new Setting(entryName, entryData, true));
 
-                    App.logWriter.WriteLog("ruleName: " + entryName + ", " + "ruleValue: " + entryData);
+                    App.logWriter.WriteLog("settingName: " + entryName + ", " + "settingValue: " + entryData);
                 }
             }
 
             return listOfSettings;
         }
 
+        //User settings get overwritten by possible enterprise settings
         public static List<Setting> mergeSettings(List<Setting> userSettings, List<Setting> enterpriseSettings)
         {
             //overwrite userSettings with enterpriseSettings
             foreach (Setting enterpriseSetting in enterpriseSettings)
             {
-                int index = userSettings.FindIndex(ind => ind.Equals(enterpriseSetting.Name));
+                int index = userSettings.FindIndex(x => x.Name.Equals(enterpriseSetting.Name));
                 if (index != -1)
                 {
                     userSettings[index].Value = enterpriseSetting.Value;
+                    userSettings[index].Enterprise = true;
                 }
                 else
                 {
-                    userSettings.Add(new Setting(enterpriseSetting.Name, enterpriseSetting.Value));
+                    userSettings.Add(new Setting(enterpriseSetting.Name, enterpriseSetting.Value, true));
                 }
             }
 
@@ -70,7 +72,7 @@ namespace BrowserPicker.Services
             App.logWriter.WriteLog("Logging global settings...");
             foreach (Setting setting in userSettings)
             {
-                App.logWriter.WriteLog("ruleName: " + setting.Name + ", " + "ruleValue: " + setting.Value);
+                App.logWriter.WriteLog("settingName: " + setting.Name + ", " + "settingValue: " + setting.Value + " Enterprise: " + setting.Enterprise);
             }
 
             return userSettings;

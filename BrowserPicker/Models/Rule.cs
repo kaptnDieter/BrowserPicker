@@ -10,11 +10,13 @@ namespace BrowserPicker.Models
     {
         public string Url { get; set; }
         public string Browser { get; set; }
+        public bool Enterprise { get; set; }
 
-        public Rule(string submittedUrl, string submittedBrowser)
+        public Rule(string submittedUrl, string submittedBrowser, bool submittedEnterprise)
         {
             Url = submittedUrl;
             Browser = submittedBrowser;
+            Enterprise = submittedEnterprise;
         }
 
 

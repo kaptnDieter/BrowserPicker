@@ -256,7 +256,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:BrowserPicker"
         "ProductCode" = "8:{363F298D-FEA8-4B7E-9E2A-23B40981C04E}"
-        "PackageCode" = "8:{658AF4DE-5492-4D4A-B251-793EFC50BB7A}"
+        "PackageCode" = "8:{B07E5D61-F058-4C20-BDF2-7AA231AF41C8}"
         "UpgradeCode" = "8:{668B05A6-8BBE-4A24-8B70-86C50E9914B2}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
@@ -756,6 +756,14 @@
                                                         }
                                                         "Values"
                                                         {
+                                                            "{ADCFDA98-8FDD-45E4-90BC-E3D20B029870}:_633D2EA08CCE4F43AC5A27DAF0BD27E5"
+                                                            {
+                                                            "Name" = "8:allowUserRules"
+                                                            "Condition" = "8:"
+                                                            "Transitive" = "11:FALSE"
+                                                            "ValueTypes" = "3:1"
+                                                            "Value" = "8:True"
+                                                            }
                                                         }
                                                     }
                                                     "{60EA8692-D2D5-43EB-80DC-7906BF13D6EF}:_64EC3710612C4E2CA4ED1E740E1D524C"

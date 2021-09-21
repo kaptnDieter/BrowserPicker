@@ -24,7 +24,7 @@ namespace BrowserPicker.Services
                 foreach (string entryName in key.GetValueNames())
                 {
                     string entryData = key.GetValue(entryName, "").ToString();
-                    listOfRules.Add(new Rule(entryName, entryData));
+                    listOfRules.Add(new Rule(entryName, entryData, false));
 
                     App.logWriter.WriteLog("browser: " + entryName + ", " + "url: " + entryData);
                 }
@@ -48,7 +48,7 @@ namespace BrowserPicker.Services
                 foreach (string entryName in key.GetValueNames())
                 {
                     string entryData = key.GetValue(entryName, "").ToString();
-                    listOfRules.Add(new Rule(entryName, entryData));
+                    listOfRules.Add(new Rule(entryName, entryData, true));
 
                     App.logWriter.WriteLog("browser: " + entryName + ", " + "url: " + entryData);
                 }
@@ -62,18 +62,25 @@ namespace BrowserPicker.Services
         //Adds user rules not existend in enterprise rules to the end
         public static List<Rule> mergeRules(List<Rule> userRules, List<Rule> enterpriseRules)
         {
-            //overwrite userRules with enterpriseRules
-            foreach (Rule userRule in userRules)
-            {
-               if(enterpriseRules.Find(x => x.Url.Equals(userRule.Url)) == null)
-               {
-                    enterpriseRules.Add(userRule);
-               }
-            }
-
             //Log globalSettings
             App.logWriter.WriteLog("--");
             App.logWriter.WriteLog("Logging global rules...");
+
+            if (App.globalSettings.Find(x => x.Name.Equals("allowUserRules")).Value != "False")
+            {
+                App.logWriter.WriteLog("allowUserRules != 'False'");
+
+                //overwrite userRules with enterpriseRules
+                foreach (Rule userRule in userRules)
+                {
+                    if (enterpriseRules.Find(x => x.Url.Equals(userRule.Url)) == null)
+                    {
+                        enterpriseRules.Add(userRule);
+                    }
+                }
+            }
+
+            //Log globalSettings
             foreach (Rule rule in enterpriseRules)
             {
                 App.logWriter.WriteLog("Url: " + rule.Url + ", " + "Browser: " + rule.Browser);

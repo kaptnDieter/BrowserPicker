@@ -21,7 +21,7 @@
 
         <Label Grid.Column="0" Grid.Row="0" Content="Rules" HorizontalAlignment="Left" VerticalAlignment="Top"/>
         <DataGrid Grid.Row="1" Name="Datagrid_listOfRules" AutoGenerateColumns="False" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5,5,5,5">
-            <DataGrid.Columns>
+            <DataGrid.Columns >
                 <DataGridTextColumn Header="Browser" Binding="{Binding Browser}"/>
                 <DataGridTextColumn Header="Url" Binding="{Binding Url}"/>
                 <DataGridTemplateColumn>
@@ -44,6 +44,7 @@
             </ListView.View>
         </ListView>
 
+        
 
         <Label Grid.Column="0" Grid.Row="2" Content="Add a rule" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.615,-0.413"/>
         <Grid Grid.Column="0" Grid.Row="3">
@@ -64,7 +65,7 @@
             <Label Content="Browser:" Grid.Column="0" Grid.Row="1"/>
             <ComboBox Name="Combobox_newRuleBrowser" Grid.Column="1" Grid.Row="1" Width="200" HorizontalAlignment="Left" VerticalAlignment="Center"/>
 
-            <Button Content="Add" Click="addRule" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,4,4,4" Width="60" />
+            <Button Name="button_AddRule" Content="Add" Click="addRule" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,4,4,4" Width="60" />
         </Grid>
 
 

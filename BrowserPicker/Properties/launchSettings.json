@@ -1,8 +1,7 @@
 {
   "profiles": {
     "BrowserPicker": {
-      "commandName": "Project",
-      "commandLineArgs": "www.google.de"
+      "commandName": "Project"
     }
   }
 }
