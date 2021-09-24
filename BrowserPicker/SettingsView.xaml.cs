@@ -29,11 +29,12 @@ namespace BrowserPicker
             Datagrid_listOfRules.ItemsSource = App.globalRules;
             ListView_listOfBrowsers.ItemsSource = browsers;
 
-            Checkbox_globalSettings_alwaysAsk.IsChecked = App.globalSettings.Find(x => x.Name.Equals("alwaysAsk")).Value == "True";
-            Checkbox_globalSettings_alwaysAsk.IsEnabled = (App.globalSettings.Find(x => x.Name.Equals("alwaysAsk")).Enterprise == false);
 
-            Checkbox_globalSettings_writeLog.IsChecked = App.globalSettings.Find(x => x.Name.Equals("writeLog")).Value == "True";
-            Checkbox_globalSettings_writeLog.IsEnabled = (App.globalSettings.Find(x => x.Name.Equals("writeLog")).Enterprise == false);
+            Checkbox_globalSettings_alwaysAsk.IsChecked = (App.globalSettings.Find(x => x.Name.Equals("alwaysAsk"))?.Value ?? "") == "True";
+            Checkbox_globalSettings_alwaysAsk.IsEnabled = (App.globalSettings.Find(x => x.Name.Equals("alwaysAsk"))?.Enterprise ?? false) == false;
+
+            Checkbox_globalSettings_writeLog.IsChecked = (App.globalSettings.Find(x => x.Name.Equals("writeLog"))?.Value ?? "") == "True";
+            Checkbox_globalSettings_writeLog.IsEnabled = (App.globalSettings.Find(x => x.Name.Equals("writeLog"))?.Enterprise ?? false) == false;
 
 
 
@@ -42,8 +43,13 @@ namespace BrowserPicker
             {
                 Combobox_defaultBrowser.Items.Add(browser.Name);
             }
-            Combobox_defaultBrowser.SelectedItem = App.globalSettings.Find(x => x.Name.Equals("defaultBrowser")).Value;
-            Combobox_defaultBrowser.IsEnabled = (App.globalSettings.Find(x => x.Name.Equals("defaultBrowser")).Enterprise == false);
+
+
+
+
+
+            Combobox_defaultBrowser.SelectedItem = (App.globalSettings.Find(x => x.Name.Equals("defaultBrowser"))?.Value ?? "");
+            Combobox_defaultBrowser.IsEnabled = (App.globalSettings.Find(x => x.Name.Equals("defaultBrowser"))?.Enterprise ?? false) == false;
 
 
             foreach (Browser browser in browsers)
@@ -51,8 +57,7 @@ namespace BrowserPicker
                 Combobox_newRuleBrowser.Items.Add(browser.Name);
             }
 
-
-            button_AddRule.IsEnabled = (App.globalSettings.Find(x => x.Name.Equals("allowUserRules")).Value != "False");
+            button_AddRule.IsEnabled = (App.globalSettings.Find(x => x.Name.Equals("allowUserRules"))?.Value ?? "") != "False";
 
         }
 

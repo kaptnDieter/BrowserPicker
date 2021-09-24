@@ -66,7 +66,8 @@ namespace BrowserPicker.Services
             App.logWriter.WriteLog("--");
             App.logWriter.WriteLog("Logging global rules...");
 
-            if (App.globalSettings.Find(x => x.Name.Equals("allowUserRules")).Value != "False")
+
+            if ((App.globalSettings.Find(x => x.Name.Equals("allowUserRules"))?.Value ?? "") != "False")
             {
                 App.logWriter.WriteLog("allowUserRules != 'False'");
 

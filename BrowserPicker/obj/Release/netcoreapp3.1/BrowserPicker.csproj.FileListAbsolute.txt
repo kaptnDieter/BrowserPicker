@@ -68,3 +68,4 @@ C:\Users\Jonathan\source\repos\GitHub\BrowserPicker\BrowserPicker\bin\Release\ne
 C:\Users\Jonathan\source\repos\GitHub\BrowserPicker\BrowserPicker\bin\Release\netcoreapp3.1\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
 C:\Users\Jonathan\source\repos\GitHub\BrowserPicker\BrowserPicker\bin\Release\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
 C:\Users\Jonathan\source\repos\GitHub\BrowserPicker\BrowserPicker\obj\Release\netcoreapp3.1\BrowserPicker.csproj.CopyComplete
+C:\Users\Jonathan\source\repos\GitHub\BrowserPicker\BrowserPicker\obj\Release\netcoreapp3.1\BrowserPicker.csproj.AssemblyReference.cache

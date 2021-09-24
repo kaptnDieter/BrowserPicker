@@ -47,8 +47,9 @@ namespace BrowserPicker.Services
                 }
             }
 
+
             //Check if a default browser is defined in settings
-                string defaultBrowser = App.globalSettings.Find(x => x.Name.Equals("defaultBrowser")).Value;
+            string defaultBrowser = (App.globalSettings.Find(x => x.Name.Equals("defaultBrowser"))?.Value ?? "");
 
                 if (defaultBrowser != "")
                 {

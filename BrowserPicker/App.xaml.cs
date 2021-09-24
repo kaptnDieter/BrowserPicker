@@ -55,6 +55,7 @@ namespace BrowserPicker
             globalRules = Services.Rules.mergeRules(userRules, enterpriseRules);
 
 
+
             //if software startet with arguments (happens when opend as default browser by windows) open url from args in specific browser
             //if no arguments submitted (.exe started manually by user), open the settings window
             if (e.Args.Length > 0)
@@ -62,8 +63,7 @@ namespace BrowserPicker
                 string url = e.Args[0];
                 logWriter.WriteLog("Submitted URL: " + url);
 
-
-                if (App.globalSettings.Find(x => x.Name.Equals("alwaysAsk")).Value == "True")
+                if ((App.globalSettings.Find(x => x.Name.Equals("alwaysAsk"))?.Value ?? "") == "True")
                 {
                     //open browser select menu
                     logWriter.WriteLog("alwaysAsk = True, open browser select");

@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BrowserPicker"
         mc:Ignorable="d"
-        Title="Select browser" Height="315" Width="411" SizeToContent="Height" Background="#FFE7E7E7" FontSize="16"
-        WindowStyle="None">
+        Title="BrowserPicker" Width="405" SizeToContent="Height" FontSize="16"
+        >
 
     <Window.Resources>
         <Style x:Key="UnderlinedButton" TargetType="{x:Type Button}">
@@ -24,22 +24,30 @@
 
 
 
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
 
 
-    <Border BorderThickness="0" Margin="10,10,10,10">
-        <StackPanel>
+        <StackPanel Grid.Row="0" Grid.Column="0" Margin="10,10,10,10">
 
-            <Label Content="Choose browser" FontSize="28" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,20"/>
+            <Label Content="Choose browser" FontSize="28" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="0,0,0,20"/>
 
-            <ItemsControl Name="ItemsControl_listOfBrowsers">
+            <ItemsControl Name="ItemsControl_listOfBrowsers" MinHeight="50">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
                         <Button Height="65" Click="browserSelected_Click" Tag="{Binding Exec}" Style="{StaticResource UnderlinedButton}">
                             <Button.Template>
                                 <ControlTemplate TargetType="{x:Type Button}">
                                     <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="2">
-                                        <StackPanel Orientation="Horizontal" Margin="1,0,0,0" >
-                                            <Border Width="44" Height="44" Background="orange" Margin="10,0,7,0">
+                                        <StackPanel Orientation="Horizontal">
+                                            <Border Width="44" Height="44" Background="orange" Margin="10,0,10,0" >
                                                 <Image Width="38" Height="38" Source="{Binding Icon}" />
                                             </Border>
                                             <Label Content="{Binding Name}" HorizontalAlignment="Left" VerticalAlignment="Top" />
@@ -52,18 +60,14 @@
                 </ItemsControl.ItemTemplate>
             </ItemsControl>
 
-
-            <StackPanel Orientation="Horizontal" Margin="0,40,0,0">
-                <Label Content="Selected url:" />
-                <Label Content="..." Name="Label_url"/>
-            </StackPanel>
-
-
         </StackPanel>
-    </Border>
 
 
-
+        <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" Margin="10,27,10,10">
+            <Label Content="Url:" />
+            <Label Content="x" Name="Label_url"/>
+        </StackPanel>
+    </Grid>
 
 
 

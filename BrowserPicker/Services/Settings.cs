@@ -78,6 +78,7 @@ namespace BrowserPicker.Services
             return userSettings;
         }
 
+
         public static bool updateUserSetting(string name, string value)
         {
             try
