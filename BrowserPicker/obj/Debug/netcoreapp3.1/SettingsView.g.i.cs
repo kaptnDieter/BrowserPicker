@@ -117,7 +117,7 @@ namespace BrowserPicker {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/BrowserPicker;V1.0.0.0;component/settingsview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/BrowserPicker;component/settingsview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\SettingsView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

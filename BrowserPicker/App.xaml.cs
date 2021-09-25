@@ -60,14 +60,16 @@ namespace BrowserPicker
             //if no arguments submitted (.exe started manually by user), open the settings window
             if (e.Args.Length > 0)
             {
-                string url = e.Args[0];
+                string url = String.Join(" ", e.Args);
+
+
                 logWriter.WriteLog("Submitted URL: " + url);
 
                 if ((App.globalSettings.Find(x => x.Name.Equals("alwaysAsk"))?.Value ?? "") == "True")
                 {
                     //open browser select menu
                     logWriter.WriteLog("alwaysAsk = True, open browser select");
-                    SelectView selectWindow = new SelectView(e.Args[0]);
+                    SelectView selectWindow = new SelectView(url);
                     selectWindow.WindowStartupLocation = WindowStartupLocation.CenterScreen;
                     selectWindow.Show();
                 }
@@ -81,7 +83,8 @@ namespace BrowserPicker
                 {
                     //open browser select menu
                     logWriter.WriteLog("could not handle url, open browser select");
-                    SelectView selectWindow = new SelectView(e.Args[0]);
+                    logWriter.WriteLog(url);
+                    SelectView selectWindow = new SelectView(url);
                     selectWindow.WindowStartupLocation = WindowStartupLocation.CenterScreen;
                     selectWindow.Show();
                     selectWindow.Activate();

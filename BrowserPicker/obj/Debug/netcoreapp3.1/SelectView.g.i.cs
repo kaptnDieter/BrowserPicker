@@ -69,7 +69,7 @@ namespace BrowserPicker {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/BrowserPicker;V1.0.0.0;component/selectview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/BrowserPicker;component/selectview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\SelectView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

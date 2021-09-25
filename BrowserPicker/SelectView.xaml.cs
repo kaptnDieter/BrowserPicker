@@ -44,7 +44,7 @@ namespace BrowserPicker
         void browserSelected_Click(object sender, RoutedEventArgs e)
         {
             string exec = (string)((Button)sender).Tag;
-            Process.Start(exec, url);
+            Services.UrlProcessor.openURL(exec, url);
             //System.Windows.Application.Current.Shutdown();
             Close();
         }

@@ -1,7 +1,8 @@
 {
   "profiles": {
     "BrowserPicker": {
-      "commandName": "Project"
+      "commandName": "Project",
+      "commandLineArgs": "file:///C:/Users/Jonathan/Desktop/test test-.html"
     }
   }
 }

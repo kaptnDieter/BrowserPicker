@@ -56,7 +56,7 @@ namespace BrowserPicker.Services
                     string browserExec = findBrowserInList(defaultBrowser, listOfBrowsers);
                     if (browserExec != null)
                     {
-                        App.logWriter.WriteLog("Found no matching rule, but a default browser is defined in settings, open browser: " + defaultBrowser);
+                    App.logWriter.WriteLog("Found no matching rule, but a default browser is defined in settings, open browser: " + defaultBrowser);
                         openURL(browserExec, url);
                         //exit function
                         return true;
@@ -90,6 +90,11 @@ namespace BrowserPicker.Services
         //Opens browser. Needs the path to the browser.exe and the url to open
         public static void openURL(string exec, string url)
         {
+            //url = System.Web.HttpUtility.UrlEncode(url);
+            //url = "'" + url + "'";
+            url = url.Replace(" ", "%20");
+
+            App.logWriter.WriteLog("open url encoded: " + url);
             Process.Start(exec, url);
         }
 
