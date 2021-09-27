@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BrowserPicker"
         mc:Ignorable="d"
-        Title="BrowserPicker" Width="405" SizeToContent="Height" FontSize="16"
+        Title="BrowserPicker by SimpleBlue" Width="405" SizeToContent="Height" FontSize="16"
         >
 
     <Window.Resources>
