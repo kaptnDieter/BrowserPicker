@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "8uxTxL9ViJZW2tTkAQP24IpTOO73JKYnIEUmR1lceNbBLjA5009jXwXSxMyFf0Vf7skHtt8i4x4ntoq0lkx68w==",
+  "dgSpecHash": "VXuba46lydwz6SCFUNr3q0g+lok/yHeL7hocQL2hWVdEuibgH0Nnh6gCfLvZ/08f7Z5dOG7EyDWURpfBDKXjHA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Jonathan\\source\\repos\\GitHub\\BrowserPicker\\BrowserPicker\\BrowserPicker.csproj",
+  "projectFilePath": "C:\\Users\\Jonathan\\source\\repos\\BrowserPicker_WPF\\BrowserPicker\\BrowserPicker.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Jonathan\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
     "C:\\Users\\Jonathan\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",
